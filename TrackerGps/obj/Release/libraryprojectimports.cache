@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <Jars></Jars>
+  <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>C:\Users\johan\Documents\Visual Studio 2017\Projects\TrackerGps_2.0\TrackerGps\obj\Release\__library_projects__\Plugin.CurrentActivity\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\johan\Documents\Visual Studio 2017\Projects\TrackerGps_2.0\TrackerGps\obj\Release\__library_projects__\Plugin.DeviceInfo\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\johan\Documents\Visual Studio 2017\Projects\TrackerGps_2.0\TrackerGps\obj\Release\__library_projects__\Plugin.Geolocator\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\johan\Documents\Visual Studio 2017\Projects\TrackerGps_2.0\TrackerGps\obj\Release\__library_projects__\Plugin.Permissions\library_project_imports\res</ResolvedResourceDirectory>
+  </ResolvedResourceDirectories>
+  <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\Plugin.CurrentActivity\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\Plugin.DeviceInfo\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\Plugin.Geolocator\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\Plugin.Permissions\library_project_imports\assets</ResolvedAssetDirectory>
+  </ResolvedAssetDirectories>
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>C:\Users\johan\Documents\Visual Studio 2017\Projects\TrackerGps_2.0\TrackerGps\obj\Release\__library_projects__\Plugin.CurrentActivity.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\johan\Documents\Visual Studio 2017\Projects\TrackerGps_2.0\TrackerGps\obj\Release\__library_projects__\Plugin.DeviceInfo.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\johan\Documents\Visual Studio 2017\Projects\TrackerGps_2.0\TrackerGps\obj\Release\__library_projects__\Plugin.Geolocator.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\johan\Documents\Visual Studio 2017\Projects\TrackerGps_2.0\TrackerGps\obj\Release\__library_projects__\Plugin.Permissions.stamp</ResolvedResourceDirectoryStamp>
+  </ResolvedResourceDirectoryStamps>
+</Paths>

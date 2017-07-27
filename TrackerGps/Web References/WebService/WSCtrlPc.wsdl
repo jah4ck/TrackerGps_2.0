@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateGuid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hostname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identifiant" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateGuidResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Registr_Position">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="latitide" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registr_PositionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="TraceLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTraitement" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="codeappli" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codeerreur" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraceLogResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="TraceLogNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTraitement" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="codeappli" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codeerreur" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraceLogNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraceLogNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanning">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanningResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlanningResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArret">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArretResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArretResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlageHoraire">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateheure" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlageHoraireResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlageHoraireResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemLogInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemLogInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRemLogInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDownloadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDownloadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDownloadFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDownloadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="dest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDownloadFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetExecProgram">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExecProgramResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExecProgramResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetExecProgram">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idexec" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetExecProgramResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetException">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExceptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExceptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDateDerniereConnexion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDateDerniereConnexionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetIncrementeRelica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetIncrementeRelicaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPresenceFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPresenceFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPresenceFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAutoUpload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAutoUploadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAutoUploadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetResetPresence">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetResetPresenceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="uploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="uploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uploadFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHeartbeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHeartbeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHeartbeatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateGuidSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateGuid" />
+  </wsdl:message>
+  <wsdl:message name="CreateGuidSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="Registr_PositionSoapIn">
+    <wsdl:part name="parameters" element="tns:Registr_Position" />
+  </wsdl:message>
+  <wsdl:message name="Registr_PositionSoapOut">
+    <wsdl:part name="parameters" element="tns:Registr_PositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraceLogSoapIn">
+    <wsdl:part name="parameters" element="tns:TraceLog" />
+  </wsdl:message>
+  <wsdl:message name="TraceLogSoapOut">
+    <wsdl:part name="parameters" element="tns:TraceLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraceLogNewSoapIn">
+    <wsdl:part name="parameters" element="tns:TraceLogNew" />
+  </wsdl:message>
+  <wsdl:message name="TraceLogNewSoapOut">
+    <wsdl:part name="parameters" element="tns:TraceLogNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanningSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlanning" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanningSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlanningResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArretSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArret" />
+  </wsdl:message>
+  <wsdl:message name="GetArretSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArretResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlageHoraireSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlageHoraire" />
+  </wsdl:message>
+  <wsdl:message name="GetPlageHoraireSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlageHoraireResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRemLogInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRemLogInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetRemLogInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRemLogInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDownloadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="GetDownloadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDownloadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="SetDownloadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExecProgramSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExecProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetExecProgramSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExecProgramResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetExecProgramSoapIn">
+    <wsdl:part name="parameters" element="tns:SetExecProgram" />
+  </wsdl:message>
+  <wsdl:message name="SetExecProgramSoapOut">
+    <wsdl:part name="parameters" element="tns:SetExecProgramResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExceptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetException" />
+  </wsdl:message>
+  <wsdl:message name="GetExceptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDateDerniereConnexionSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDateDerniereConnexion" />
+  </wsdl:message>
+  <wsdl:message name="SetDateDerniereConnexionSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDateDerniereConnexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetIncrementeRelicaSoapIn">
+    <wsdl:part name="parameters" element="tns:SetIncrementeRelica" />
+  </wsdl:message>
+  <wsdl:message name="SetIncrementeRelicaSoapOut">
+    <wsdl:part name="parameters" element="tns:SetIncrementeRelicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPresenceFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPresenceFile" />
+  </wsdl:message>
+  <wsdl:message name="GetPresenceFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPresenceFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAutoUploadSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAutoUpload" />
+  </wsdl:message>
+  <wsdl:message name="GetAutoUploadSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAutoUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetResetPresenceSoapIn">
+    <wsdl:part name="parameters" element="tns:SetResetPresence" />
+  </wsdl:message>
+  <wsdl:message name="SetResetPresenceSoapOut">
+    <wsdl:part name="parameters" element="tns:SetResetPresenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="uploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:uploadFile" />
+  </wsdl:message>
+  <wsdl:message name="uploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:uploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHeartbeatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHeartbeat" />
+  </wsdl:message>
+  <wsdl:message name="GetHeartbeatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHeartbeatResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSCtrlPcSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGuid">
+      <wsdl:input message="tns:CreateGuidSoapIn" />
+      <wsdl:output message="tns:CreateGuidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registr_Position">
+      <wsdl:input message="tns:Registr_PositionSoapIn" />
+      <wsdl:output message="tns:Registr_PositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraceLog">
+      <wsdl:input message="tns:TraceLogSoapIn" />
+      <wsdl:output message="tns:TraceLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraceLogNew">
+      <wsdl:input message="tns:TraceLogNewSoapIn" />
+      <wsdl:output message="tns:TraceLogNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanning">
+      <wsdl:input message="tns:GetPlanningSoapIn" />
+      <wsdl:output message="tns:GetPlanningSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArret">
+      <wsdl:input message="tns:GetArretSoapIn" />
+      <wsdl:output message="tns:GetArretSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlageHoraire">
+      <wsdl:input message="tns:GetPlageHoraireSoapIn" />
+      <wsdl:output message="tns:GetPlageHoraireSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemLogInfo">
+      <wsdl:input message="tns:GetRemLogInfoSoapIn" />
+      <wsdl:output message="tns:GetRemLogInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDownloadFile">
+      <wsdl:input message="tns:GetDownloadFileSoapIn" />
+      <wsdl:output message="tns:GetDownloadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDownloadFile">
+      <wsdl:input message="tns:SetDownloadFileSoapIn" />
+      <wsdl:output message="tns:SetDownloadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExecProgram">
+      <wsdl:input message="tns:GetExecProgramSoapIn" />
+      <wsdl:output message="tns:GetExecProgramSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetExecProgram">
+      <wsdl:input message="tns:SetExecProgramSoapIn" />
+      <wsdl:output message="tns:SetExecProgramSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetException">
+      <wsdl:input message="tns:GetExceptionSoapIn" />
+      <wsdl:output message="tns:GetExceptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDateDerniereConnexion">
+      <wsdl:input message="tns:SetDateDerniereConnexionSoapIn" />
+      <wsdl:output message="tns:SetDateDerniereConnexionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetIncrementeRelica">
+      <wsdl:input message="tns:SetIncrementeRelicaSoapIn" />
+      <wsdl:output message="tns:SetIncrementeRelicaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPresenceFile">
+      <wsdl:input message="tns:GetPresenceFileSoapIn" />
+      <wsdl:output message="tns:GetPresenceFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAutoUpload">
+      <wsdl:input message="tns:GetAutoUploadSoapIn" />
+      <wsdl:output message="tns:GetAutoUploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetResetPresence">
+      <wsdl:input message="tns:SetResetPresenceSoapIn" />
+      <wsdl:output message="tns:SetResetPresenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="uploadFile">
+      <wsdl:input message="tns:uploadFileSoapIn" />
+      <wsdl:output message="tns:uploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHeartbeat">
+      <wsdl:input message="tns:GetHeartbeatSoapIn" />
+      <wsdl:output message="tns:GetHeartbeatSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSCtrlPcSoap" type="tns:WSCtrlPcSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGuid">
+      <soap:operation soapAction="http://tempuri.org/CreateGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registr_Position">
+      <soap:operation soapAction="http://tempuri.org/Registr_Position" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraceLog">
+      <soap:operation soapAction="http://tempuri.org/TraceLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraceLogNew">
+      <soap:operation soapAction="http://tempuri.org/TraceLogNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanning">
+      <soap:operation soapAction="http://tempuri.org/GetPlanning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArret">
+      <soap:operation soapAction="http://tempuri.org/GetArret" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlageHoraire">
+      <soap:operation soapAction="http://tempuri.org/GetPlageHoraire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemLogInfo">
+      <soap:operation soapAction="http://tempuri.org/GetRemLogInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDownloadFile">
+      <soap:operation soapAction="http://tempuri.org/GetDownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDownloadFile">
+      <soap:operation soapAction="http://tempuri.org/SetDownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExecProgram">
+      <soap:operation soapAction="http://tempuri.org/GetExecProgram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetExecProgram">
+      <soap:operation soapAction="http://tempuri.org/SetExecProgram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetException">
+      <soap:operation soapAction="http://tempuri.org/GetException" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDateDerniereConnexion">
+      <soap:operation soapAction="http://tempuri.org/SetDateDerniereConnexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIncrementeRelica">
+      <soap:operation soapAction="http://tempuri.org/SetIncrementeRelica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPresenceFile">
+      <soap:operation soapAction="http://tempuri.org/GetPresenceFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAutoUpload">
+      <soap:operation soapAction="http://tempuri.org/GetAutoUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetResetPresence">
+      <soap:operation soapAction="http://tempuri.org/SetResetPresence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadFile">
+      <soap:operation soapAction="http://tempuri.org/uploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHeartbeat">
+      <soap:operation soapAction="http://tempuri.org/GetHeartbeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSCtrlPcSoap12" type="tns:WSCtrlPcSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGuid">
+      <soap12:operation soapAction="http://tempuri.org/CreateGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registr_Position">
+      <soap12:operation soapAction="http://tempuri.org/Registr_Position" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraceLog">
+      <soap12:operation soapAction="http://tempuri.org/TraceLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraceLogNew">
+      <soap12:operation soapAction="http://tempuri.org/TraceLogNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanning">
+      <soap12:operation soapAction="http://tempuri.org/GetPlanning" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArret">
+      <soap12:operation soapAction="http://tempuri.org/GetArret" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlageHoraire">
+      <soap12:operation soapAction="http://tempuri.org/GetPlageHoraire" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemLogInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetRemLogInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDownloadFile">
+      <soap12:operation soapAction="http://tempuri.org/GetDownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDownloadFile">
+      <soap12:operation soapAction="http://tempuri.org/SetDownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExecProgram">
+      <soap12:operation soapAction="http://tempuri.org/GetExecProgram" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetExecProgram">
+      <soap12:operation soapAction="http://tempuri.org/SetExecProgram" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetException">
+      <soap12:operation soapAction="http://tempuri.org/GetException" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDateDerniereConnexion">
+      <soap12:operation soapAction="http://tempuri.org/SetDateDerniereConnexion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIncrementeRelica">
+      <soap12:operation soapAction="http://tempuri.org/SetIncrementeRelica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPresenceFile">
+      <soap12:operation soapAction="http://tempuri.org/GetPresenceFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAutoUpload">
+      <soap12:operation soapAction="http://tempuri.org/GetAutoUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetResetPresence">
+      <soap12:operation soapAction="http://tempuri.org/SetResetPresence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadFile">
+      <soap12:operation soapAction="http://tempuri.org/uploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/GetHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSCtrlPc">
+    <wsdl:port name="WSCtrlPcSoap" binding="tns:WSCtrlPcSoap">
+      <soap:address location="http://192.168.1.24:8030/WSCtrlPc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSCtrlPcSoap12" binding="tns:WSCtrlPcSoap12">
+      <soap12:address location="http://192.168.1.24:8030/WSCtrlPc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
